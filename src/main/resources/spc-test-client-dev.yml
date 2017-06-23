@@ -1,0 +1,12 @@
+name: zhangsan
+content: I am a littler small drag and happy all the time with you please don't leave me alone haah
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7003/eureka/
+  instance:
+    preferIpAddress: true
+    lease-renewal-interval-in-seconds: 20
+    lease-expiration-duration-in-seconds: 31
+logging:
+  level: INFO
