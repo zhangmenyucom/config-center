@@ -1,5 +1,10 @@
 name: zhangsan
 content: I am a littler small drag and happy all the time with you please don't leave me alone haah
+server:
+  port: 8080
+spring:
+  application:
+    name: spc-test-client
 eureka:
   client:
     serviceUrl:
