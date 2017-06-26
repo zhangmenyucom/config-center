@@ -5,7 +5,7 @@ spring:
     name: eureka-server
 eureka:
   instance:
-    hostname: localhost
+    hostname: eureka-master
     lease-expiration-duration-in-seconds: 30
     prefer-ip-address: true #eureka url以Ip形式存在
   client:
