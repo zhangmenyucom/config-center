@@ -10,7 +10,7 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:7003/eureka/
   instance:
-    preferIpAddress: true
+    preferIpAddress: false
     lease-renewal-interval-in-seconds: 20
     lease-expiration-duration-in-seconds: 31
 logging:
