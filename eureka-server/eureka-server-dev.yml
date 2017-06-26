@@ -7,7 +7,7 @@ eureka:
   instance:
     hostname: localhost
     lease-expiration-duration-in-seconds: 30
-    prefer-ip-address: true
+    prefer-ip-address: false #eureka url以Ip形式存在
   client:
     registerWithEureka: false
     fetchRegistry: false
