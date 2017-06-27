@@ -9,10 +9,15 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://localhost:7003/eureka/
+    registry-fetch-interval-seconds: 20
+
   instance:
     lease-renewal-interval-in-seconds: 3
     lease-expiration-duration-in-seconds: 4
     preferIpAddress: true
+  server:
+    renewal-percent-threshold: 0.1
+
 zuul:
   ignoredServices: '*'
   routes:

@@ -5,14 +5,15 @@ spring:
     name: eureka-server
 eureka:
   instance:
-    hostname: eureka-master
-    lease-expiration-duration-in-seconds: 30
-    prefer-ip-address: true #eureka url以Ip形式存在
+    hostname: eureka-master #主机名不配置时以操作系统的主机名获取
+    lease-renewal-interval-in-seconds: 30 #eureka客户端向服务端发送心跳的间隔
+    lease-expiration-duration-in-seconds: 90 #超过此时间没有续约的服务将被剔除掉，默认90秒
+    prefer-ip-address: true #是否优先使用ip地址作为主机名的标识
   client:
     registerWithEureka: true #将自己做为服务注册到其他注册中心
-    fetchRegistry: true
+    fetchRegistry: true       #是否可以获取服务列表
     serviceUrl:
-      defaultZone: http://localhost:7004/eureka/
+      defaultZone: http://localhost:7004/eureka/ #eureka-sever地址列表，以分号隔开
   server:
-    enable-self-preservation: true
-    renewal-percent-threshold: 0.1
+    enable-self-preservation: false  #默认true,如果在15分钟内，续约成功率在90%以下，则保护好现有列表，不剔除
+    renewal-percent-threshold: 0.1   #每15分钟内如果接收的心跳失败率在0.1以上则启动保护模式

@@ -8,10 +8,13 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:7003/eureka/,http://localhost:7003/eureka/
+      defaultZone: http://localhost:7003/eureka/,http://localhost:7003/eureka/ #获取服务列表地址
+      registry-fetch-interval-seconds: 20 #定时向eureka Server请求刷新服务列表时间，默认30
+    healthCheck:
+      enabled: true
   instance:
-    preferIpAddress: true
-    lease-renewal-interval-in-seconds: 20
-    lease-expiration-duration-in-seconds: 31
+    preferIpAddress: true #注册时以ip注册
+    lease-renewal-interval-in-seconds: 20 #定时向eureka-server续约时间，表示自已还存活着
+    lease-expiration-duration-in-seconds: 60 #超过这个时间如果没有续约则被eureka-server剔除掉
 logging:
   level: INFO
