@@ -12,7 +12,7 @@ eureka:
     registerWithEureka: true #将自己做为服务注册到其他注册中心
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://eureka-slave:7004/eureka/
+      defaultZone: http://localhost:7004/eureka/
   server:
     enable-self-preservation: true
     renewal-percent-threshold: 0.1
