@@ -14,5 +14,5 @@ eureka:
     serviceUrl:
       defaultZone: http://eureka-master:7003/eureka/
   server:
-    enable-self-preservation: false
+    enable-self-preservation: true
     renewal-percent-threshold: 0.1
