@@ -11,6 +11,7 @@
         <eureka-version>1.3.1.RELEASE</eureka-version>
         <jersey-version>1.9</jersey-version>
         <zuul-version>1.2.6.RELEASE</zuul-version>
+        <ribbon-version>1.3.1.RELEASE</ribbon-version>
     </properties>
 
     <dependencyManagement>
@@ -51,6 +52,11 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
             <version>${eureka-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-ribbon</artifactId>
+            <version>${ribbon-version}</version>
         </dependency>
     </dependencies>
 </project>

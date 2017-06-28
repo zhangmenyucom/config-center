@@ -1,6 +1,11 @@
 spring:
   application:
     name: zuul-api-gate
+  cloud:
+    loadbalancer:
+     retry:
+       enabled: true
+
 server:
   port: 7002
 eureka:
