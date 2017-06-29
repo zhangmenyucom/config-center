@@ -21,3 +21,6 @@ zuul:
       serviceId: spc-test-client
       sensitiveHeaders:
       stripPrefix: true
+management:
+  security:
+    enabled: false
