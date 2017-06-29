@@ -16,5 +16,13 @@ eureka:
     preferIpAddress: true #注册时以ip注册
     lease-renewal-interval-in-seconds: 20 #定时向eureka-server续约时间，表示自已还存活着
     lease-expiration-duration-in-seconds: 60 #超过这个时间如果没有续约则被eureka-server剔除掉
+
+ribbon:
+  ReadTimeout: 8000 #读取时间
+  ConnectTimeout: 8000 #路由时间
+  OkToRetryOnAllOperations: true  #对所有操作请求都进行重试
+  MaxAutoRetries: 1 #对当前实例的重试次数
+  MaxAutoRetriesNextServer: 1 #对下个实例的重试次数
+
 logging:
   level: INFO

@@ -1,26 +1,47 @@
 spring:
   application:
     name: zuul-api-gate
+
 server:
   port: 7002
+
 eureka:
   client:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://localhost:7003/eureka/
+      defaultZone: http://localhost:7003/eureka/,http://localhost:7004/eureka/
   instance:
     lease-renewal-interval-in-seconds: 3
     lease-expiration-duration-in-seconds: 4
     preferIpAddress: true
+
 zuul:
-  ignoredServices: '*'
+  ignoredServices: '*' #由于默认为各个服务创建以服务名为匹配的路由，要手动管理，刚去掉默认的路由
+  add-host-header: true #防止重定向后跳转到具体的url而不是网关的路由地址
   routes:
     account:
       path: /test-client/**
       serviceId: spc-test-client
-      sensitiveHeaders:
+      sensitiveHeaders: #设置为空以覆盖不会将敏感关信息传递的默认设置
       stripPrefix: true
+  retryable: true  #路由失败重试
+
 management:
   security:
-    enabled: false
+    enabled: false #可以在浏览器中查看节点的健康状况
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000 #超过60秒熔断降级
+
+ribbon:
+  ReadTimeout: 18000 #读取时间
+  ConnectTimeout: 8000 #路由时间
+  OkToRetryOnAllOperations: true  #对所有操作请求都进行重试
+  MaxAutoRetries: 1 #对当前实例的重试次数
+  MaxAutoRetriesNextServer: 1 #对下个实例的重试次数

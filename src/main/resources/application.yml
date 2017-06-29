@@ -31,3 +31,5 @@ zuul:
       serviceId: spc-test-client
       sensitiveHeaders:
       stripPrefix: true
+  add-host-header: true
+  retryable: true
