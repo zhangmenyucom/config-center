@@ -5,6 +5,9 @@ spring:
     loadbalancer:
      retry:
        enabled: true
+    config:
+      username: user
+      password: 7cc3d4c3-9fda-48be-bb7f-6bd304c2ec57
 
 server:
   port: 7002
