@@ -11,7 +11,7 @@ spring:
        enabled: true
 management:
   security:
-    enabled: true #允许健康诊断权限
+    enabled: false #可以在浏览器中查看节点的健康状况
 
 eureka:
   client:

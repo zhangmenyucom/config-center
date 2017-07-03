@@ -14,6 +14,6 @@ eureka:
     fetchRegistry: true       #是否可以获取服务列表
     serviceUrl:
       defaultZone: http://localhost:7003/eureka/ #eureka-sever地址列表，以分号隔开
-   server:
-      enable-self-preservation: false  #默认true,如果在15分钟内，续约成功率在90%以下，则保护好现有列表，不剔除
-      renewal-percent-threshold: 0.1   #每15分钟内如果接收的心跳失败率在0.1以上则启动保护模式
+  server:
+    enable-self-preservation: false  #默认true,如果在15分钟内，续约成功率在90%以下，则保护好现有列表，不剔除
+    renewal-percent-threshold: 0.1   #每15分钟内如果接收的心跳失败率在0.1以上则启动保护模式
