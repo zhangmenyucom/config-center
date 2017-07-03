@@ -9,6 +9,10 @@ spring:
     loadbalancer:
      retry:
        enabled: true
+management:
+  security:
+    enabled: true #允许健康诊断权限
+
 eureka:
   client:
     serviceUrl:
