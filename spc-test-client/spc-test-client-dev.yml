@@ -9,6 +9,11 @@ spring:
     loadbalancer:
      retry:
        enabled: true
+  rabbitmq:
+    host: 192.168.186.128
+    port: 5672
+    username: spring-cloud
+    password: guest
 management:
   security:
     enabled: false #可以在浏览器中查看节点的健康状况
