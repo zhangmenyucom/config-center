@@ -15,4 +15,3 @@ spring:
         multiplier: 1.1 #失败后下一次重试因子
         max-interval: 6000 #最大重试间隔
         max-attempts: 6 #最大重试次数
-

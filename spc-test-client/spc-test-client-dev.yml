@@ -1,9 +1,9 @@
 name: zhangsan12321
-content: I am a littler small drag**************111111
+content: I am a littler small drag**************11111
 server:
   port: 8081
 spring:
-  application:
+ application:
     name: spc-test-client
   cloud:
     loadbalancer:
