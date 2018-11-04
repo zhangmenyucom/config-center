@@ -9,6 +9,8 @@ spring:
         git:
           uri: https://github.com/zhangmenyucom/config-center
           searchPaths: '{application}'
+          clone-on-start: true
+
 eureka:
   client:
     registerWithEureka: true

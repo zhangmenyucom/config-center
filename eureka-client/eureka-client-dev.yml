@@ -12,6 +12,8 @@ eureka:
   client:
     registerWithEureka: false #是否自己也做为服务注册到其他注册中心，集群下设为true
     fetchRegistry: false #是否缓存服务列表
+    healthcheck:
+      enable: true
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/ #eureka-sever地址列表，以分号隔开
   server:
