@@ -4,14 +4,18 @@ spring:
   application:
     name: config-center
   cloud:
-    loadbalancer:
-     retry:
-       enabled: true
     config:
-      #username: user
-      #password: 7cc3d4c3-9fda-48be-bb7f-6bd304c2ec57
-      retry:
-        initial-interval: 1000 #初始重试间隔
-        multiplier: 1.1 #失败后下一次重试因子
-        max-interval: 6000 #最大重试间隔
-        max-attempts: 6 #最大重试次数
+      server:
+        git:
+          uri: https://github.com/zhangmenyucom/config-center
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    registry-fetch-interval-seconds: 30
+  instance:
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90
+    preferIpAddress: true
