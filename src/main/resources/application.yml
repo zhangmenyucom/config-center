@@ -8,6 +8,7 @@ spring:
       server:
         git:
           uri: https://github.com/zhangmenyucom/config-center
+          searchPaths: '{application}'
 eureka:
   client:
     registerWithEureka: true
