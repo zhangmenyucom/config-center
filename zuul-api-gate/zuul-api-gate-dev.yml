@@ -10,7 +10,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://localhost:7003/eureka/,http://localhost:7004/eureka/
+      defaultZone: http://localhost:8761/eureka/
   instance:
     lease-renewal-interval-in-seconds: 3
     lease-expiration-duration-in-seconds: 4
