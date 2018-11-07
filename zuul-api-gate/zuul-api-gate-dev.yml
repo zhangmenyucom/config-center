@@ -24,14 +24,9 @@ zuul:
     error:
       disable: true #禁用过滤器
   routes:
-    spc-client:
-      path: /test-client/**
-      serviceId: spc-test-client
-      sensitiveHeaders: #设置为空以覆盖不会将敏感关信息传递的默认设置
-      stripPrefix: true
-    zuul:
-      path: /zuul-api/**
-      serviceId: zuul-api-gate
+    eureka-client:
+      path: /eureka-client/**
+      serviceId: eureka-client
       sensitiveHeaders: #设置为空以覆盖不会将敏感关信息传递的默认设置
       stripPrefix: true
 
