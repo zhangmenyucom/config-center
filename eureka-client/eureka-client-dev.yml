@@ -10,15 +10,12 @@ eureka:
     lease-expiration-duration-in-seconds: 90 #超过此时间没有续约的服务将被剔除掉
     prefer-ip-address: true #是否优先使用ip地址作为主机名的标识
   client:
-    registerWithEureka: false #是否自己也做为服务注册到其他注册中心，集群下设为true
-    fetchRegistry: false #是否缓存服务列表
+    registerWithEureka: true #是否自己也做为服务注册到其他注册中心，集群下设为true
+    fetchRegistry: true #是否缓存服务列表
     healthcheck:
       enable: true
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/ #eureka-sever地址列表，以分号隔开
-  server:
-    enable-self-preservation: false  #默认true,如果在15分钟内，续约成功率在90%以下，则保护好现有列表，不剔除
-    renewal-percent-threshold: 0.1   #每15分钟内如果接收的心跳失败率在0.1以上则启动保护模式
 logging:
   level: INFO
 example:
