@@ -35,10 +35,6 @@ zuul:
       sensitiveHeaders: #设置为空以覆盖不会将敏感关信息传递的默认设置
       stripPrefix: true
 
-management:
-  security:
-    enabled: false #可以在浏览器中查看节点的健康状况
-
 hystrix:
   command:
     default:
