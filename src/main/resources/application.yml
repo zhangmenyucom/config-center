@@ -10,6 +10,7 @@ spring:
           uri: https://github.com/zhangmenyucom/config-center
           searchPaths: '{application}'
           clone-on-start: true
+          default-label: master
           username: zhangmenyucom
           password: VBN123vbn
 
