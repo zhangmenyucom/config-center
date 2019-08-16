@@ -10,6 +10,8 @@ spring:
           uri: https://github.com/zhangmenyucom/config-center
           searchPaths: '{application}'
           clone-on-start: true
+          username: zhangmenyucom
+          password: VBN123vbn
 
 eureka:
   client:
